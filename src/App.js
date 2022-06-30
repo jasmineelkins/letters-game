@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import GridContainer from "./components/GridContainer";
+import ClearWord from "./components/ClearWord";
+import TextOutput from "./components/TextOutput";
 
 function App() {
+  const [selectedLetter, setSelectedLetter] = useState("");
+  const [userWord, setUserWord] = useState("");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="pageContainer">
+      <GridContainer
+        setSelectedLetter={setSelectedLetter}
+        userWord={userWord}
+        setUserWord={setUserWord}
+      />
+
+      <div className="rightColumn">
+        <ClearWord setUserWord={setUserWord} />
+        <TextOutput selectedLetter={selectedLetter} userWord={userWord} />
+      </div>
     </div>
   );
 }
