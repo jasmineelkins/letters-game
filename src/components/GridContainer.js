@@ -20,7 +20,7 @@ function GridContainer({ setSelectedLetter, setUserWord, userWord }) {
     "W",
   ];
 
-  // // create 16 grid squares
+  // create 16 grid squares
   const gridSquares = lettersArray.map((letter, index) => (
     <div
       key={index}

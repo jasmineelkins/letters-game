@@ -1,9 +1,19 @@
 import Reacts from "react";
 
-function TextOutput({ selectedLetter, userWord }) {
+function TextOutput({ selectedLetter, userWord, setUserWord }) {
+  function checkIfValid(e) {
+    e.preventDefault();
+    console.log(userWord);
+
+    // check if word is valid
+
+    setUserWord("");
+  }
   return (
     <div className="outputContainer">
-      <span className="textOutput">{userWord}</span>
+      <form onSubmit={(e) => checkIfValid(e)}>
+        <input value={userWord}></input>
+      </form>
     </div>
   );
 }

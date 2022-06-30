@@ -68,14 +68,14 @@ body {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+.outputContainer input {
   width: 300px;
   height: 80px;
   border: 1px solid black;
-}
-
-.textOutput {
   font-size: 40px;
-  padding: 20px;
+  padding: 10px 20px;
   /* padding-left: 30px; */
   color: #d1001b;
 }

@@ -17,7 +17,11 @@ function App() {
 
       <div className="rightColumn">
         <ClearWord setUserWord={setUserWord} />
-        <TextOutput selectedLetter={selectedLetter} userWord={userWord} />
+        <TextOutput
+          selectedLetter={selectedLetter}
+          userWord={userWord}
+          setUserWord={setUserWord}
+        />
       </div>
     </div>
   );
