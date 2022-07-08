@@ -6,6 +6,7 @@ import TextOutput from "./components/TextOutput";
 function App() {
   const [selectedLetter, setSelectedLetter] = useState("");
   const [userWord, setUserWord] = useState("");
+  const [wordSubmitted, setWordSubmitted] = useState(false);
 
   return (
     <div className="pageContainer">
@@ -16,11 +17,17 @@ function App() {
       />
 
       <div className="rightColumn">
-        <ClearWord setUserWord={setUserWord} />
+        <ClearWord
+          userWord={userWord}
+          setUserWord={setUserWord}
+          setWordSubmitted={setWordSubmitted}
+        />
         <TextOutput
           selectedLetter={selectedLetter}
           userWord={userWord}
           setUserWord={setUserWord}
+          wordSubmitted={wordSubmitted}
+          setWordSubmitted={setWordSubmitted}
         />
       </div>
     </div>

@@ -32,17 +32,19 @@ body {
 }
 
 .gridSquare {
-  border: 2px solid red;
-  border-radius: 15%;
+  border: 3px solid #f6615f;
+  /* border: 3px solid #a71926; */
+  border-radius: 10px;
   height: 100px;
   width: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: linear-gradient(#fad35d, #f66e1c);
+  /* background: linear-gradient(#ee4a59, #a0071d); */
   color: white;
   font-size: 42px;
-  text-shadow: -4px 0 6px rgba(0, 0, 0, 0.566);
+  text-shadow: -3px -1px 6px rgba(0, 0, 0, 0.566);
 }
 
 /* CLEAR BUTTON ------------------------------------------------------------------- */
@@ -63,19 +65,47 @@ body {
   background: #d8d8d8;
 }
 
+.clearContainer button:hover {
+  background: #aeaeae;
+}
+
+.clearContainer button.disabled {
+  pointer-events: none;
+}
+
 /* OUTPUT ------------------------------------------------------------------------- */
 .outputContainer {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
+.outputContainer form {
+  width: 400px;
+  height: 80px;
+  border: 3px solid #a4a4a4;
+}
 
 .outputContainer input {
   width: 300px;
-  height: 80px;
-  border: 1px solid black;
+  /* height: 80px; */
+  border: none;
   font-size: 40px;
   padding: 10px 20px;
   /* padding-left: 30px; */
   color: #d1001b;
+  letter-spacing: 7px;
+}
+
+.outputContainer input:selected {
+  border: none;
+}
+
+.outputContainer input:focus {
+  outline: none;
+}
+
+.validSpan {
+  /* font-style: italic; */
+  color: #f4c8cd;
+  font-size: 18px;
 }

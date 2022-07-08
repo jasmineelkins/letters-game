@@ -1,38 +1,35 @@
 import React, { useState } from "react";
+import Tile from "./Tile";
 
 function GridContainer({ setSelectedLetter, setUserWord, userWord }) {
   const lettersArray = [
-    "D",
-    "A",
-    "E",
-    "B",
-    "I",
     "L",
-    "M",
-    "O",
-    "P",
+    "I",
     "S",
+    "T",
+    "O",
+    "F",
     "A",
-    "E",
+    "T",
+    "S",
+    "T",
     "R",
-    "C",
-    "G",
-    "W",
+    "S",
+    "O",
+    "R",
+    "A",
+    "Y",
   ];
 
   // create 16 grid squares
   const gridSquares = lettersArray.map((letter, index) => (
-    <div
+    <Tile
       key={index}
-      className="gridSquare"
-      onClick={(e) => {
-        setSelectedLetter(e.target.textContent);
-        console.log(e.target.textContent);
-        setUserWord(userWord + e.target.textContent);
-      }}
-    >
-      {letter}
-    </div>
+      setSelectedLetter={setSelectedLetter}
+      userWord={userWord}
+      setUserWord={setUserWord}
+      letter={letter}
+    />
   ));
 
   return <div className="gridContainer">{gridSquares}</div>;
