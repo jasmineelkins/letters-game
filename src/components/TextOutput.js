@@ -6,7 +6,7 @@ function TextOutput({ userWord, isValidWord }) {
   const spanStyle = isValidWord === false ? "invalid" : "valid";
 
   return (
-    <div className="outputContainer">
+    <div className="outputContainer item3">
       <form>
         <input value={userWord} className={spanStyle}></input>
         {userWord === "" ? null : (

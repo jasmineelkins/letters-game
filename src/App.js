@@ -10,16 +10,16 @@ function App() {
   const [isValidWord, setIsValidWord] = useState(false);
 
   return (
-    <div className="pageContainer">
-      <GridContainer
-        setSelectedLetter={setSelectedLetter}
-        userWord={userWord}
-        setUserWord={setUserWord}
-        isValidWord={isValidWord}
-        setIsValidWord={setIsValidWord}
-      />
+    <div className="contentWrapper">
+      <div className="pageContainer">
+        <GridContainer
+          setSelectedLetter={setSelectedLetter}
+          userWord={userWord}
+          setUserWord={setUserWord}
+          isValidWord={isValidWord}
+          setIsValidWord={setIsValidWord}
+        />
 
-      <div className="rightColumn">
         <ClearWord userWord={userWord} />
         <TextOutput userWord={userWord} isValidWord={isValidWord} />
       </div>

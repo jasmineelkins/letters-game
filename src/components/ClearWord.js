@@ -7,10 +7,10 @@ function ClearWord({ userWord }) {
     window.location.reload();
   }
   return (
-    <div className="clearContainer">
+    <div className="clearContainer item2">
       <span>clear word</span>
       <button
-        class={buttonStyle}
+        className={buttonStyle}
         style={{ color: "white" }}
         onClick={() => handleClick()}
       >
