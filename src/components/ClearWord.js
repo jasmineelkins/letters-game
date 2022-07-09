@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 
-function ClearWord({ userWord, setUserWord, setWordSubmitted }) {
+function ClearWord({ userWord }) {
   const buttonStyle = userWord ? "" : "disabled";
 
   function handleClick() {
-    setUserWord("");
-    setWordSubmitted(false);
+    window.location.reload();
   }
   return (
     <div className="clearContainer">

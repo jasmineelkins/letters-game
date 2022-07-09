@@ -7,7 +7,7 @@ TO-DO:
 3. Style elements to match
    a. basic orange gradient color scheme _DONE_
    b. gradient square borders
-   c. add class to change selected square to red gradient (no border)
+   c. add class to change selected square to red/green gradient _DONE_
    d. match font
 4. Clear button resets the board _DONE_
    a. deselects all squares
@@ -16,6 +16,5 @@ TO-DO:
 5. Enter to submit form = check if word is valid _DONE_
    a. add valid/invalid text to form output
 6. BONUS: user can only select neighbor tiles
-   a. can't select same tile twice
+   a. can't select same tile twice _DONE_
 7. Responsive to mobile
-   a. add green gradient (no border) & output for mobile

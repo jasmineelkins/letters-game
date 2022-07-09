@@ -41,10 +41,22 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(#fad35d, #f66e1c);
-  /* background: linear-gradient(#ee4a59, #a0071d); */
   color: white;
   font-size: 42px;
   text-shadow: -3px -1px 6px rgba(0, 0, 0, 0.566);
+}
+
+.gridSquare.selected {
+  border: none;
+  pointer-events: none;
+}
+
+.gridSquare.selected.valid {
+  background: linear-gradient(#b0e84f, #459521);
+}
+
+.gridSquare.selected.invalid {
+  background: linear-gradient(#ee4a59, #a0071d);
 }
 
 /* CLEAR BUTTON ------------------------------------------------------------------- */
@@ -104,8 +116,22 @@ body {
   outline: none;
 }
 
-.validSpan {
-  /* font-style: italic; */
-  color: #f4c8cd;
+input.valid {
+  color: #7ed320;
+}
+
+input.invalid {
+  color: #d1001b;
+}
+
+span {
   font-size: 18px;
+}
+
+span.valid {
+  color: #d2e0c6;
+}
+
+span.invalid {
+  color: #f4c8cd;
 }

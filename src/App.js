@@ -7,6 +7,7 @@ function App() {
   const [selectedLetter, setSelectedLetter] = useState("");
   const [userWord, setUserWord] = useState("");
   const [wordSubmitted, setWordSubmitted] = useState(false);
+  const [isValidWord, setIsValidWord] = useState(false);
 
   return (
     <div className="pageContainer">
@@ -14,21 +15,13 @@ function App() {
         setSelectedLetter={setSelectedLetter}
         userWord={userWord}
         setUserWord={setUserWord}
+        isValidWord={isValidWord}
+        setIsValidWord={setIsValidWord}
       />
 
       <div className="rightColumn">
-        <ClearWord
-          userWord={userWord}
-          setUserWord={setUserWord}
-          setWordSubmitted={setWordSubmitted}
-        />
-        <TextOutput
-          selectedLetter={selectedLetter}
-          userWord={userWord}
-          setUserWord={setUserWord}
-          wordSubmitted={wordSubmitted}
-          setWordSubmitted={setWordSubmitted}
-        />
+        <ClearWord userWord={userWord} />
+        <TextOutput userWord={userWord} isValidWord={isValidWord} />
       </div>
     </div>
   );
