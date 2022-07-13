@@ -12,28 +12,33 @@ function GridContainer({
   setIsValidWord,
 }) {
   const validWords = dictionary.words;
+  const [gameInPlay, setGameInPlay] = useState(false);
+  const [lastSelected, setLastSelected] = useState({});
 
   useEffect(() => {
     // check if word is valid
-    console.log(userWord);
-
     if (validWords.includes(userWord.toLowerCase())) {
-      console.log("valid");
+      console.log("valid word: ", userWord);
       setIsValidWord(true);
     } else {
-      console.log("invalid");
+      console.log("invalid word: ", userWord);
       setIsValidWord(false);
     }
-  }, [userWord]);
+  }, [userWord, validWords, setIsValidWord]);
 
   const gridSquares = board2.board.map((letter, index) => (
     <Tile
       key={index}
+      index={index}
       letter={letter}
       setSelectedLetter={setSelectedLetter}
       userWord={userWord}
       setUserWord={setUserWord}
       isValidWord={isValidWord}
+      lastSelected={lastSelected}
+      setLastSelected={setLastSelected}
+      gameInPlay={gameInPlay}
+      setGameInPlay={setGameInPlay}
     />
   ));
 

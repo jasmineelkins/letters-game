@@ -75,6 +75,11 @@ body {
   mask-composite: exclude;
 }
 
+.gridSquare.notSelectable {
+  opacity: 0.8;
+  pointer-events: none;
+}
+
 .gridSquare.selected {
   border: none;
   pointer-events: none;
