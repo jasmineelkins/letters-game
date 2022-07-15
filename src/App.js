@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import GridContainer from "./components/GridContainer";
 import ClearWord from "./components/ClearWord";
 import TextOutput from "./components/TextOutput";
@@ -6,8 +6,8 @@ import TextOutput from "./components/TextOutput";
 function App() {
   const [selectedLetter, setSelectedLetter] = useState("");
   const [userWord, setUserWord] = useState("");
-  const [wordSubmitted, setWordSubmitted] = useState(false);
   const [isValidWord, setIsValidWord] = useState(false);
+  const [boardTiles, setBoardTiles] = useState([]);
 
   return (
     <div className="contentWrapper">

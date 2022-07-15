@@ -53,7 +53,6 @@ function Tile({
     setIsSelected(true);
     setSelectedLetter(e.target.textContent);
     setUserWord(userWord + e.target.textContent);
-    setLastSelected();
     setLastSelected({ index: index, x: x, y: y });
   }
   return (

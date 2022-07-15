@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Tile from "./Tile";
-import dictionary from "../dictionary.json";
-import board1 from "../test-board-1.json";
-import board2 from "../test-board-2.json";
+import board1 from "..//resources/test-board-1.json";
+import board2 from "..//resources/test-board-2.json";
 
 function GridContainer({
   setSelectedLetter,
@@ -11,20 +10,28 @@ function GridContainer({
   isValidWord,
   setIsValidWord,
 }) {
-  const validWords = dictionary.words;
   const [gameInPlay, setGameInPlay] = useState(false);
   const [lastSelected, setLastSelected] = useState({});
 
   useEffect(() => {
-    // check if word is valid
-    if (validWords.includes(userWord.toLowerCase())) {
-      console.log("valid word: ", userWord);
+    console.log(userWord);
+    getWord(userWord);
+  }, [userWord]);
+
+  async function getWord(word) {
+    try {
+      const response = await fetch(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`
+      );
+      const foundWordsArray = await response.json();
+
+      console.log(foundWordsArray[0].word);
       setIsValidWord(true);
-    } else {
-      console.log("invalid word: ", userWord);
+    } catch (error) {
+      console.log("ERROR: ", error.message);
       setIsValidWord(false);
     }
-  }, [userWord, validWords, setIsValidWord]);
+  }
 
   const gridSquares = board2.board.map((letter, index) => (
     <Tile
