@@ -3,7 +3,6 @@ import React, { useState } from "react";
 function Tile({
   letter,
   index,
-  setSelectedLetter,
   userWord,
   setUserWord,
   isValidWord,
@@ -51,7 +50,6 @@ function Tile({
   function handleSelectedTile(e) {
     setGameInPlay(true);
     setIsSelected(true);
-    setSelectedLetter(e.target.textContent);
     setUserWord(userWord + e.target.textContent);
     setLastSelected({ index: index, x: x, y: y });
   }

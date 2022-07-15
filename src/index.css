@@ -1,9 +1,17 @@
 /* FONT ------------------------------------------------------------------------- */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;800&display=swap");
+
 /* GENERAL ------------------------------------------------------------------------- */
 body {
   margin: 0;
   font-family: "Montserrat", sans-serif;
+}
+
+button {
+  font-size: 30px;
+  border-radius: 100%;
+  border: none;
+  color: white;
 }
 
 .contentWrapper {
@@ -16,11 +24,9 @@ body {
 .item1 {
   grid-area: gridContainer;
 }
-
 .item2 {
-  grid-area: clearButton;
+  grid-area: buttons;
 }
-
 .item3 {
   grid-area: textOutput;
 }
@@ -28,9 +34,9 @@ body {
 .pageContainer {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 25% 50% 25%;
+  grid-template-rows: 15% 50% 35%;
   grid-template-areas:
-    "clearButton"
+    "buttons"
     "gridContainer"
     "textOutput";
 }
@@ -97,8 +103,19 @@ body {
   background: linear-gradient(#ee4a59, #a0071d);
 }
 
+/* BUTTONS CONTAINER ------------------------------------------------------------------- */
+.buttonsDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 5px;
+  padding-top: 25px;
+}
+
 /* CLEAR BUTTON ------------------------------------------------------------------- */
-.clearContainer {
+.clearContainer,
+.newGameContainer {
   color: #d8d8d8;
   display: flex;
   justify-content: flex-end;
@@ -107,11 +124,7 @@ body {
 }
 
 .clearContainer button {
-  padding: 7px 14px;
-  font-size: 30px;
-  border-radius: 50%;
-  border: none;
-  color: white;
+  padding: 5px 4px 0 5px;
   background: #d8d8d8;
 }
 
@@ -123,11 +136,21 @@ body {
   pointer-events: none;
 }
 
+/* NEW GAME BUTTON ---------------------------------------------------------------- */
+.newGameContainer {
+  color: #e7d1e4;
+}
+.newGameContainer button {
+  padding: 5px 4px 0 5px;
+  background: #e7d1e4;
+}
+
 /* OUTPUT ------------------------------------------------------------------------- */
 .outputContainer {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 50px;
 }
 
 .outputContainer form {
@@ -192,7 +215,7 @@ span.invalid {
     grid-template-columns: 50% 50%;
     grid-template-rows: 50% 50%;
     grid-template-areas:
-      "gridContainer clearButton"
+      "gridContainer buttons"
       "gridContainer textOutput";
   }
 
@@ -201,12 +224,12 @@ span.invalid {
   }
 
   .clearContainer {
-    height: 100%;
     align-items: flex-start;
   }
 
   .outputContainer {
     height: 100%;
     align-items: flex-end;
+    margin-top: 0;
   }
 }

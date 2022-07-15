@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Tile from "./Tile";
-import board1 from "..//resources/test-board-1.json";
-import board2 from "..//resources/test-board-2.json";
+import board1 from "../resources/test-board-1.json";
+import board2 from "../resources/test-board-2.json";
+import randomBoard from "../resources/randomBoard";
 
 function GridContainer({
-  setSelectedLetter,
   setUserWord,
   userWord,
   isValidWord,
   setIsValidWord,
+  currentBoard,
 }) {
   const [gameInPlay, setGameInPlay] = useState(false);
   const [lastSelected, setLastSelected] = useState({});
@@ -33,12 +34,11 @@ function GridContainer({
     }
   }
 
-  const gridSquares = board2.board.map((letter, index) => (
+  const gridSquares = currentBoard.map((letter, index) => (
     <Tile
       key={index}
       index={index}
       letter={letter}
-      setSelectedLetter={setSelectedLetter}
       userWord={userWord}
       setUserWord={setUserWord}
       isValidWord={isValidWord}
