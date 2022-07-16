@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-function TextOutput({ userWord, isValidWord }) {
+function TextOutput({ selectedTiles, isValidWord }) {
+  const currentWord = selectedTiles.map((tile) => tile.letter).join("");
   const validTextDisplay = isValidWord === false ? "invalid" : "valid";
 
   const spanStyle = isValidWord === false ? "invalid" : "valid";
@@ -8,8 +9,8 @@ function TextOutput({ userWord, isValidWord }) {
   return (
     <div className="outputContainer item3">
       <form>
-        <input value={userWord} className={spanStyle}></input>
-        {userWord === "" ? null : (
+        <input value={currentWord} className={spanStyle}></input>
+        {currentWord === "" ? null : (
           <span className={spanStyle}>{validTextDisplay}</span>
         )}
       </form>

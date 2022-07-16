@@ -3,13 +3,13 @@ import React, { useState, useReducer } from "react";
 function Tile({
   letter,
   index,
-  userWord,
-  setUserWord,
   isValidWord,
   lastSelected,
   setLastSelected,
   gameInPlay,
   setGameInPlay,
+  selectedTiles,
+  setSelectedTiles,
 }) {
   const [isSelected, setIsSelected] = useState(false);
 
@@ -56,8 +56,13 @@ function Tile({
   function handleSelectedTile(e) {
     setGameInPlay(true);
     setIsSelected(true);
-    setUserWord(userWord + e.target.textContent);
     setLastSelected({ index: index, x: x, y: y });
+
+    setSelectedTiles([
+      ...selectedTiles,
+      { letter: e.target.textContent, index: index },
+    ]);
+    // console.log("selected: ", selectedTiles);
   }
   return (
     <div

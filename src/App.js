@@ -5,7 +5,7 @@ import ClearWord from "./components/ClearWord";
 import TextOutput from "./components/TextOutput";
 
 function App() {
-  const [userWord, setUserWord] = useState("");
+  const [selectedTiles, setSelectedTiles] = useState([]);
   const [isValidWord, setIsValidWord] = useState(false);
 
   const [currentBoard, setCurrentBoard] = useState([
@@ -31,21 +31,25 @@ function App() {
     <div className="contentWrapper">
       <div className="pageContainer">
         <GridContainer
-          userWord={userWord}
-          setUserWord={setUserWord}
           isValidWord={isValidWord}
           setIsValidWord={setIsValidWord}
           currentBoard={currentBoard}
+          selectedTiles={selectedTiles}
+          setSelectedTiles={setSelectedTiles}
         />
         <div className="buttonsDiv item2">
-          <ClearWord userWord={userWord} setUserWord={setUserWord} />
+          <ClearWord
+            selectedTiles={selectedTiles}
+            setSelectedTiles={setSelectedTiles}
+          />
           <NewGame
             setCurrentBoard={setCurrentBoard}
-            setUserWord={setUserWord}
+            selectedTiles={selectedTiles}
+            setSelectedTiles={setSelectedTiles}
           />
         </div>
 
-        <TextOutput userWord={userWord} isValidWord={isValidWord} />
+        <TextOutput selectedTiles={selectedTiles} isValidWord={isValidWord} />
       </div>
     </div>
   );

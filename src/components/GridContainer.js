@@ -5,19 +5,21 @@ import board2 from "../resources/test-board-2.json";
 import randomBoard from "../resources/randomBoard";
 
 function GridContainer({
-  setUserWord,
-  userWord,
   isValidWord,
   setIsValidWord,
   currentBoard,
+  selectedTiles,
+  setSelectedTiles,
 }) {
   const [gameInPlay, setGameInPlay] = useState(false);
   const [lastSelected, setLastSelected] = useState({});
 
   useEffect(() => {
-    console.log(userWord);
-    getWord(userWord);
-  }, [userWord]);
+    const currentWord = selectedTiles.map((tile) => tile.letter).join("");
+    // console.log("current word: ", currentWord);
+
+    getWord(currentWord);
+  }, [selectedTiles]);
 
   async function getWord(word) {
     try {
@@ -39,13 +41,13 @@ function GridContainer({
       key={index}
       index={index}
       letter={letter}
-      userWord={userWord}
-      setUserWord={setUserWord}
       isValidWord={isValidWord}
       lastSelected={lastSelected}
       setLastSelected={setLastSelected}
       gameInPlay={gameInPlay}
       setGameInPlay={setGameInPlay}
+      selectedTiles={selectedTiles}
+      setSelectedTiles={setSelectedTiles}
     />
   ));
 

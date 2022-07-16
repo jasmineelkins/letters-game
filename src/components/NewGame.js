@@ -2,7 +2,12 @@ import React from "react";
 import { IoMdRefresh } from "react-icons/io";
 import randomBoard from "../resources/randomBoard";
 
-function NewGame({ setCurrentBoard, setUserWord, setIsSelected }) {
+function NewGame({
+  setCurrentBoard,
+  setIsSelected,
+  selectedTiles,
+  setSelectedTiles,
+}) {
   // let board = [];
 
   function handleClick() {
@@ -14,7 +19,7 @@ function NewGame({ setCurrentBoard, setUserWord, setIsSelected }) {
     });
 
     console.log(newLetters);
-    setUserWord("");
+    setSelectedTiles([]);
     setCurrentBoard(newLetters);
     setIsSelected(false);
   }
