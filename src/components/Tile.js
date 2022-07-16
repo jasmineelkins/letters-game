@@ -6,8 +6,6 @@ function Tile({
   isValidWord,
   lastSelected,
   setLastSelected,
-  gameInPlay,
-  setGameInPlay,
   selectedTiles,
   setSelectedTiles,
 }) {
@@ -23,9 +21,9 @@ function Tile({
   const y = Math.floor(index / 4);
 
   function determineIfValidTile(x, y) {
-    if (gameInPlay === false) {
+    if (!selectedTiles[0]) {
       return true;
-    } else if (gameInPlay === true) {
+    } else if (selectedTiles[0]) {
       if (
         Math.abs(x - lastSelected.x) <= 1 &&
         Math.abs(y - lastSelected.y) <= 1
@@ -54,7 +52,6 @@ function Tile({
   }
 
   function handleSelectedTile(e) {
-    setGameInPlay(true);
     setIsSelected(true);
     setLastSelected({ index: index, x: x, y: y });
 

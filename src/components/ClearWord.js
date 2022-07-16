@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
 function ClearWord({ selectedTiles, setSelectedTiles }) {
-  const buttonStyle = selectedTiles === [] ? "" : "disabled";
+  const buttonStyle = selectedTiles[0] ? "" : "disabled";
 
   function handleClick() {
     // window.location.reload();

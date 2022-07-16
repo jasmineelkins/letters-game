@@ -11,7 +11,6 @@ function GridContainer({
   selectedTiles,
   setSelectedTiles,
 }) {
-  const [gameInPlay, setGameInPlay] = useState(false);
   const [lastSelected, setLastSelected] = useState({});
 
   useEffect(() => {
@@ -44,8 +43,6 @@ function GridContainer({
       isValidWord={isValidWord}
       lastSelected={lastSelected}
       setLastSelected={setLastSelected}
-      gameInPlay={gameInPlay}
-      setGameInPlay={setGameInPlay}
       selectedTiles={selectedTiles}
       setSelectedTiles={setSelectedTiles}
     />
