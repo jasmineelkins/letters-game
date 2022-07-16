@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function TextOutput({ selectedTiles, isValidWord }) {
   const currentWord = selectedTiles.map((tile) => tile.letter).join("");

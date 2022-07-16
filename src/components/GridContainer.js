@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Tile from "./Tile";
-import board1 from "../resources/test-board-1.json";
-import board2 from "../resources/test-board-2.json";
-import randomBoard from "../resources/randomBoard";
 
 function GridContainer({
   isValidWord,
@@ -15,7 +12,6 @@ function GridContainer({
 
   useEffect(() => {
     const currentWord = selectedTiles.map((tile) => tile.letter).join("");
-    // console.log("current word: ", currentWord);
 
     getWord(currentWord);
   }, [selectedTiles]);

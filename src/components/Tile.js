@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React from "react";
 
 function Tile({
   letter,
@@ -9,13 +9,9 @@ function Tile({
   selectedTiles,
   setSelectedTiles,
 }) {
-  const [isSelected, setIsSelected] = useState(false);
-
-  // const [state, dispatch] = useReducer(reducer, initialState);
-
-  // const acion = {
-  //   type: 'Actiontype'
-  // };
+  const isSelected = selectedTiles.find((tile) =>
+    tile.index === index ? true : false
+  );
 
   const x = index % 4;
   const y = Math.floor(index / 4);
@@ -52,14 +48,12 @@ function Tile({
   }
 
   function handleSelectedTile(e) {
-    setIsSelected(true);
     setLastSelected({ index: index, x: x, y: y });
 
     setSelectedTiles([
       ...selectedTiles,
       { letter: e.target.textContent, index: index },
     ]);
-    // console.log("selected: ", selectedTiles);
   }
   return (
     <div

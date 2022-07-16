@@ -44,7 +44,6 @@ function App() {
           />
           <NewGame
             setCurrentBoard={setCurrentBoard}
-            selectedTiles={selectedTiles}
             setSelectedTiles={setSelectedTiles}
           />
         </div>
