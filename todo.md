@@ -9,7 +9,7 @@ TO-DO:
    b. gradient square borders _DONE_
    c. add class to change selected square to red/green gradient _DONE_
    d. match font _DONE_
-4. Clear button resets the board (reloads page) **redoing this...properly**
+4. Clear button resets the board (reloads page) _DONE_
    a. deselects all squares _DONE_
    b. clears output _DONE_
    c. button disabled if no squares selected _DONE_
