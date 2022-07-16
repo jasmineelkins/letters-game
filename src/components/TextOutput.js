@@ -8,12 +8,10 @@ function TextOutput({ selectedTiles, isValidWord }) {
 
   return (
     <div className="outputContainer item3">
-      <form>
-        <input value={currentWord} className={spanStyle}></input>
-        {currentWord === "" ? null : (
-          <span className={spanStyle}>{validTextDisplay}</span>
-        )}
-      </form>
+      <p className={spanStyle}>{currentWord}</p>
+      {currentWord === "" ? null : (
+        <span className={spanStyle}>{validTextDisplay}</span>
+      )}
     </div>
   );
 }
