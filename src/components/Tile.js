@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useReducer } from "react";
 
 function Tile({
   letter,
@@ -12,6 +12,12 @@ function Tile({
   setGameInPlay,
 }) {
   const [isSelected, setIsSelected] = useState(false);
+
+  // const [state, dispatch] = useReducer(reducer, initialState);
+
+  // const acion = {
+  //   type: 'Actiontype'
+  // };
 
   const x = index % 4;
   const y = Math.floor(index / 4);
