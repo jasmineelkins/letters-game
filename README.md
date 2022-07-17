@@ -1,14 +1,13 @@
-# Project Name
+# Letters Game
 
 > This is a simple game featuring a 4x4 board of lettered tiles. Click on adjacent tiles to build words.
 
-[Play it here on mobile or desktop](https://jasmineelkins.github.io/letters-game/)
+> Play it [here](https://jasmineelkins.github.io/letters-game/) on mobile or desktop.
 
 ## Table of Contents
 
 - [General Info](#general-information)
 - [Technologies Used](#technologies-used)
-<!-- - [Features](#features) -->
 - [Screenshots](#screenshots)
 - [Project Status](#project-status)
 - [Setup and Usage](#setup-and-usage)
@@ -18,6 +17,8 @@
 I built this game following the full stack coding challenge at Enara Health. Project requirements can be found [here](https://github.com/baytelman/fullstack-interview). The purpose is to build a React app matching their example in both functionality and style.
 
 In addition to completing the challenge requirements I also added the ability to check the validity of each word against a dictionary API, instead of the provided list of test words.
+
+Clicking 'new game' generates a new board of random letters which are based on the dice weights from the game Boggle. This will ensure that each board contains at least a few valid words.
 
 ## Technologies Used
 
